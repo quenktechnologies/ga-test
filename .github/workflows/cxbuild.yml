@@ -3,7 +3,7 @@ on:
   push
 
 jobs:
-  ci:
+  myci:
     runs-on: ubuntu-latest
     steps:
       - uses: quenktechnologies/.github/actions/node/build@master
