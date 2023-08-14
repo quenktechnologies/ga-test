@@ -1,7 +1,7 @@
 {
     "name": "ga-test",
     "version": "1.0.0",
-    "description": "",
+    "description": "Yum",
     "main": "index.js",
     "scripts": {
         "test": "exit 0",
