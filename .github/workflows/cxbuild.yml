@@ -1,9 +1,0 @@
-name: cibuild
-on:
-  push
-
-jobs:
-  myci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: quenktechnologies/.github/actions/node/build@master

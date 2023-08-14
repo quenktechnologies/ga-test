@@ -1,0 +1,24 @@
+name: cibuild
+on:
+  push
+
+jobs:
+  myci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: quenktechnologies/.github/actions/node/build@master
+      - name: Create Pull Request
+        id: create_pr
+        run: |
+          TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          BRANCH_NAME=$(git symbolic-ref --short HEAD)
+          RESPONSE=$(curl -X POST \
+            -H "Authorization: token $TOKEN" \
+            -d "{\"title\": \"Auto Pull Request\", \"head\": \"$BRANCH_NAME\", \"base\": \"master\"}" \
+            https://api.github.com/repos/$GITHUB_REPOSITORY/pulls)
+
+          PR_URL=$(echo "$RESPONSE" | jq -r '.html_url')
+          echo "Pull request created: $PR_URL"
+
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
