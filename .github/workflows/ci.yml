@@ -6,4 +6,4 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - uses: quenktechnologies/.github/actions/node/build
+      - uses: quenktechnologies/.github/actions/node/build@master
