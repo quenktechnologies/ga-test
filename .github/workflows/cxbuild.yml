@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: quenktechnologies/.github/actions/node/build@master
       - run: npm test                 # run tests (configured to use jest-junit reporter)
+      - run: cat results.json
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()    # run this step even if previous step failed

@@ -1,0 +1,77 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-08-14T17:07:15.976Z",
+    "end": "2023-08-14T17:07:15.980Z",
+    "duration": 4
+  },
+  "tests": [
+    {
+      "title": "should work",
+      "fullTitle": "main should work",
+      "file": "/home/master/Code/ga-test/test/main_test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should work good",
+      "fullTitle": "main should work good",
+      "file": "/home/master/Code/ga-test/test/main_test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should fail ",
+      "fullTitle": "main should fail ",
+      "file": "/home/master/Code/ga-test/test/main_test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: fail != working\n    at Context.<anonymous> (test/main_test.js:14:11)\n    at process.processImmediate (node:internal/timers:476:21)",
+        "message": "fail != working"
+      }
+    }
+  ],
+  "pending": [],
+  "failures": [
+    {
+      "title": "should fail ",
+      "fullTitle": "main should fail ",
+      "file": "/home/master/Code/ga-test/test/main_test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "err": {
+        "stack": "Error: fail != working\n    at Context.<anonymous> (test/main_test.js:14:11)\n    at process.processImmediate (node:internal/timers:476:21)",
+        "message": "fail != working"
+      }
+    }
+  ],
+  "passes": [
+    {
+      "title": "should work",
+      "fullTitle": "main should work",
+      "file": "/home/master/Code/ga-test/test/main_test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    },
+    {
+      "title": "should work good",
+      "fullTitle": "main should work good",
+      "file": "/home/master/Code/ga-test/test/main_test.js",
+      "duration": 0,
+      "currentRetry": 0,
+      "speed": "fast",
+      "err": {}
+    }
+  ]
+}
