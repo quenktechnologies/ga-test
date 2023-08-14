@@ -11,10 +11,13 @@ jobs:
         id: create_pr
         run: |
           TOKEN="${{ secrets.GITHUB_TOKEN }}"
-          BRANCH_NAME=$(git symbolic-ref --short HEAD)
+          BRANCH=$(git symbolic-ref --short HEAD)
+          TITLE=$(git log -1 --format=%s HEAD)
+          BODY=$(git log -1 --format=%B HEAD)
+          PAYLOAD="{\"title\": \"$TITLE\", \"head\": \"$BRANCH\", \"body\": \"$BODY\", \"base\": \"master\"}"
           RESPONSE=$(curl -X POST \
             -H "Authorization: token $TOKEN" \
-            -d "{\"title\": \"Auto Pull Request\", \"head\": \"$BRANCH_NAME\", \"base\": \"master\"}" \
+            -d $PAYLOAD \
             https://api.github.com/repos/$GITHUB_REPOSITORY/pulls)
 
           PR_URL=$(echo "$RESPONSE" | jq -r '.html_url')
