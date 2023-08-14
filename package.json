@@ -4,8 +4,9 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "test": "echo 1",
-        "lint": "echo 1"
+        "test": "exit 1",
+        "lint": "exit 0",
+        "build": "exit 0"
     },
     "keywords": [],
     "author": "",
