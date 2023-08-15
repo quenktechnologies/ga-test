@@ -1,0 +1,26 @@
+name: build
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: quenktechnologies/.github/actions/node/build@master
+  pr:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.ref != 'refs/heads/master' }}
+    steps:
+      - uses: quenktechnologies/.github/actions/github/auto-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  publish:
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.ref == 'refs/heads/master' }}
+    steps:
+      - uses: quenktechnologies/.github/actions/node/publish@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
