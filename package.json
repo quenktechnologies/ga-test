@@ -1,7 +1,7 @@
 {
     "name": "ga-test",
     "version": "1.0.0",
-    "description": "Yummy food",
+    "description": "Yummy food of mine",
     "main": "index.js",
     "scripts": {
         "test": "node test.js",
