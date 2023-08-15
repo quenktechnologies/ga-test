@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: quenktechnologies/.github/actions/node/publish@master
         with: 
-          artifact: master-artifact
+          artifact: master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
